@@ -33,7 +33,7 @@ public class ExcelComapre {
 	static boolean status = false;
 	static String reportfilename = "";
 
- public static String[] reportsheet(String reportfile) {
+ public static String[] reportsheet(String reportfile,String cj) {
 	 
 	 String returnvalue[] = new String[2];
         try {
@@ -42,13 +42,13 @@ public class ExcelComapre {
 			Date datedd = new Date();
 			System.out.println(formatter.format(datedd));
 			String localDate11 = formatter.format(datedd).toString();
-			excelpath_update = "C:\\GoogleAnalyticsProject\\GA\\FinalResult_"+localDate11+".xlsx";
+			excelpath_update = "C:\\GoogleAnalyticsProject\\GA\\"+cj+"GA_Comparison_Report.xlsx";
 			SetExcelFile(excelpath_update, sheetname);
 			
-			reportfilename = "FinalResult_"+localDate11+".xlsx";
+			reportfilename = cj+"GA_Comparison_Report.xlsx";
             // get input excel files
          System.out.println("Welcome");
-            FileInputStream excellFile1 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\compare\\Ga_Expected.xlsx"));
+            FileInputStream excellFile1 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\compare\\HealthGA_Expected.xlsx"));
             FileInputStream excellFile2 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\GA\\"+reportfile+".xlsx"));
 
             // Create Workbook instance holding reference to .xlsx file
@@ -161,16 +161,15 @@ public class ExcelComapre {
 	                 break;
 	             }else if (j==lastRow2) {
 	            	 equalSheets = false;       	 
-		            	 resultdata[0]= sheet1cell1data;
-			             	
-			             resultdata[1]= sheet1cell2data;
-			             resultdata[2]= "";
-			             	
-			             resultdata[3]= "";
-			             
-			             resultdata[4]= sheet1cell1data +":"+sheet1cell2data;
-			             
-			             resultdata[6]= "FAIL";
+	            	 resultdata[0]= sheet1cell1data;
+		             	
+		             resultdata[1]= sheet1cell2data;
+		             resultdata[2]= "";
+		             	
+		             resultdata[3]= "";
+		             resultdata[4]= sheet1cell1data +":"+sheet1cell2data;
+		             resultdata[5]="";
+		             resultdata[6]= "FAIL";
 			             status = "FAIL";
 			             
 			             SetCellData1(excelpath_update, sheetname,resultdata, excelrow,status);
@@ -320,13 +319,13 @@ public class ExcelComapre {
 			Row row0 = resultSheet.createRow(0);
 			row0.createCell(0).setCellValue("S.No");
 			row0.getCell(0).setCellStyle(style);
-			row0.createCell(1).setCellValue("Event Category Refrence sheet");
+			row0.createCell(1).setCellValue("Event Category Expected sheet");
 			row0.getCell(1).setCellStyle(style);
-			row0.createCell(2).setCellValue("Event Action Refrence sheet");
+			row0.createCell(2).setCellValue("Event Action Expected sheet");
 			row0.getCell(2).setCellStyle(style);
-			row0.createCell(3).setCellValue("Event Category GA sheet");
+			row0.createCell(3).setCellValue("Event Category GA Actual sheet");
 			row0.getCell(3).setCellStyle(style);
-			row0.createCell(4).setCellValue("Event Action GA sheet");
+			row0.createCell(4).setCellValue("Event Action GA Actual sheet");
 			row0.getCell(4).setCellStyle(style);
 			row0.createCell(5).setCellValue("Missing in Actual");
 			row0.getCell(5).setCellStyle(style);

@@ -29,7 +29,7 @@ public class GetReports {
 	static int uniqueID ;
 	
 	static String expectedreportpath = "C:\\GoogleAnalyticsProject\\compare\\";
-	static String expectedreportName = "Ga_Expected.xlsx";
+	static String expectedreportName = "GA_Expected.xlsx";
 	static String rawreportpath = "C:\\GoogleAnalyticsProject\\GA\\";
 	static String rawReportName = "";
 	static String FinalReportData[] = null;
@@ -131,7 +131,7 @@ public class GetReports {
 		rawreportpath = rawreportpath+rawReportName;
 		
 		rawreporturl = S3bucketurl.GetUrl(rawReportName, "","","xlsx","Excel","PortalAutomation", rawreportpath);
-		
+		expectedreportName = CJ+expectedreportName;
 		System.out.println("rawreport report url " + rawreporturl);
 		expectedreportpath = expectedreportpath+expectedreportName;
 		
@@ -140,7 +140,7 @@ public class GetReports {
 		System.out.println("expected report url " + expectedreporturl);
 		rawReportName = rawReportName.split("\\.")[0];
 		System.out.println("the rawreportname is " + rawReportName);
-		FinalReportData= ExcelComapre.reportsheet(rawReportName);
+		FinalReportData= ExcelComapre.reportsheet(rawReportName,CJ);
 		
 		status = FinalReportData[0];
 		

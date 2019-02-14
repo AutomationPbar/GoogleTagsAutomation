@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="104460" started-at="2019-02-14T09:42:24Z" finished-at="2019-02-14T09:44:09Z">
+  <suite name="Default suite" duration-ms="118014" started-at="2019-02-14T11:04:07Z" finished-at="2019-02-14T11:06:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="104460" started-at="2019-02-14T09:42:24Z" finished-at="2019-02-14T09:44:09Z">
+    <test name="Default test" duration-ms="118014" started-at="2019-02-14T11:04:07Z" finished-at="2019-02-14T11:06:05Z">
       <class name="com.gareport.ApiTest">
-        <test-method status="PASS" signature="returnapi()[pri:0, instance:com.gareport.ApiTest@6e06451e]" name="returnapi" duration-ms="104400" started-at="2019-02-14T15:12:24Z" finished-at="2019-02-14T15:14:09Z">
+        <test-method status="PASS" signature="returnapi()[pri:0, instance:com.gareport.ApiTest@6e06451e]" name="returnapi" duration-ms="117958" started-at="2019-02-14T16:34:07Z" finished-at="2019-02-14T16:36:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- returnapi -->

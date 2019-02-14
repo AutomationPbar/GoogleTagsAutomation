@@ -184,7 +184,7 @@ public class GoogleAnalytics {
 			    }    
 			}
 			
-			 newName = "GA_Actual_Report_"+journey+localDate+".xlsx";
+			 newName = journey+"GA_Actual_Report_"+localDate+".xlsx";
 			    String newFilePath = oldFile.getAbsolutePath().replace(oldFile.getName(), "") + newName;
 			    File newFile = new File(newFilePath);
 
