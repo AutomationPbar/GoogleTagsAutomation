@@ -38,6 +38,8 @@ public class GetReports {
 	static String finalreportname = "";
 	static String finalreporturl = "";
 	static String status = "";
+	static String missactual = "";
+	static String missexpected = "";
 	
 	static boolean result = true;
 	
@@ -158,7 +160,11 @@ public class GetReports {
 		
 		System.out.println("final report url " + finalreporturl);
 		
-		DBManager.UpdateGAData(Gaid, "",0,0,0,CJ, rawreporturl,expectedreporturl,finalreporturl,result, false,"",null,null,null,tableName,uniqueID);
+		missactual = FinalReportData[2];
+		missexpected = FinalReportData[3];
+		
+		
+		DBManager.UpdateGAData(Gaid, "",0,0,0,CJ, rawreporturl,expectedreporturl,finalreporturl,result, false,"",null,missactual,missexpected,tableName,uniqueID);
 
 	} catch (Exception e) {
 		e.printStackTrace();

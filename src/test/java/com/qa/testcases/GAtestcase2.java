@@ -150,7 +150,7 @@ public class GAtestcase2 extends TestBase {
 			e.printStackTrace();
 		}
 		
-		//driver.close();
+		driver.close();
 	
 		GetReports.insertcookiedata(Gtoken2, "Health",strDate, false,true);
 	}

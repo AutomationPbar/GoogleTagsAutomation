@@ -32,10 +32,14 @@ public class ExcelComapre {
 	static String resultdata[] = new String[8];
 	static boolean status = false;
 	static String reportfilename = "";
+	static StringBuilder sb= new StringBuilder();
+	static StringBuilder sb2= new StringBuilder();
+	static String missactual = "";
+	static String missexpected = "";
 
  public static String[] reportsheet(String reportfile,String cj) {
 	 
-	 String returnvalue[] = new String[2];
+	 String returnvalue[] = new String[4];
         try {
         	
         	SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy_HH_mm");
@@ -77,6 +81,8 @@ public class ExcelComapre {
             e.printStackTrace();
         }
         returnvalue[1] = reportfilename;
+        returnvalue[2] = missactual;
+        returnvalue[3] = missexpected;
         return returnvalue;
     }
 
@@ -174,6 +180,8 @@ public class ExcelComapre {
 			             
 			             SetCellData1(excelpath_update, sheetname,resultdata, excelrow,status);
 							excelrow++;
+							sb.append("'").append(sheet1cell1data +"_"+sheet1cell2data).append("'");
+							 missactual = sb.toString();
 		                 System.out.println("Row "+i+" - Not Equal");
 	            	 }
 	                 
@@ -266,6 +274,9 @@ public class ExcelComapre {
 			             SetCellData1(excelpath_update, sheetname,resultdata, dexcelrow,status);
 							dexcelrow++;
 		                 System.out.println("Row "+k+" - Not Equal");
+		                 sb2.append("'").append(sheet2cell3newdata +"_"+sheet2cell4newdata).append("'");
+		                 System.out.println("Missing tags is expected " +sb2);
+		                 missexpected = sb2.toString();
 	            	 }
 	                 
 	             } 
