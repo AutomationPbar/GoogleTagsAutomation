@@ -42,14 +42,14 @@ public class ExcelComapre {
 	 String returnvalue[] = new String[4];
         try {
         	
-        	SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy_HH_mm");
+        	SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy");
 			Date datedd = new Date();
 			System.out.println(formatter.format(datedd));
 			String localDate11 = formatter.format(datedd).toString();
-			excelpath_update = "C:\\GoogleAnalyticsProject\\GA\\"+cj+"GA_Comparison_Report.xlsx";
+			excelpath_update = "C:\\GoogleAnalyticsProject\\GA\\"+cj+"Automation_GA_Comparison_Report"+localDate11+".xlsx";
 			SetExcelFile(excelpath_update, sheetname);
 			
-			reportfilename = cj+"GA_Comparison_Report.xlsx";
+			reportfilename = cj+"Automation_GA_Comparison_Report"+localDate11+".xlsx";
             // get input excel files
          System.out.println("Welcome");
             FileInputStream excellFile1 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\compare\\HealthGA_Expected.xlsx"));

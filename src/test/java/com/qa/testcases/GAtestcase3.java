@@ -26,9 +26,9 @@ import com.fw.qa.utilities.GoogleAnalytics;
 import com.fw.qa.utilities.ReadCookies;
 import com.fw.qa.utilities.S3bucketurl;
 
-public class GAtestcase2 extends TestBase {
+public class GAtestcase3 extends TestBase {
 	
-	String nam = "test";
+	String nam = "Automation GA Test";
 	String city = "Gurgaon";
 	HomeScreen homescreen;
 	FillDetailsPage detailspage1;
@@ -69,7 +69,7 @@ public class GAtestcase2 extends TestBase {
 	 static DBManager dbm = new DBManager();
 	
 	
-	public GAtestcase2(){
+	public GAtestcase3(){
 		
 		super();
 	}
@@ -97,6 +97,8 @@ public class GAtestcase2 extends TestBase {
 		
 		System.out.println(driver.getTitle());
 		try {
+			FillDetailsPage.continuebtn.click();
+			Thread.sleep(1000);
 			detailspage1.filldetails(nam,m);
 			file1 =rc.readcookie(file1);
 			System.out.println("cookie one path" + file1.getAbsolutePath());

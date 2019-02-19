@@ -8,7 +8,6 @@ import com.fw.qa.utilities.DBManager;
 import com.fw.qa.utilities.ExcelComapre;
 import com.fw.qa.utilities.GoogleAnalytics;
 import com.fw.qa.utilities.S3bucketurl;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 public class GetReports {
 	
@@ -52,6 +51,14 @@ public class GetReports {
 			
 			e.printStackTrace();
 		}
+	}
+	
+	public static void UpdateQueryActiveStatus(String tableName) throws Exception {
+		
+		connect();
+
+		DBManager.UpdateQueryActive(tableName);
+		
 	}
 	
 	

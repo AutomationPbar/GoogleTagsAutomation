@@ -32,6 +32,7 @@ public class FillDetailsPage extends TestBase {
 	
 	
 	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[3]/div/button/span")
+	public static
 	WebElement continuebtn;
 	
 	

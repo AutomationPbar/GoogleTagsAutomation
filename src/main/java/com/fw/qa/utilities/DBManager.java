@@ -197,6 +197,22 @@ public class DBManager {
 		tear();
 
 	}
+	
+	
+	public static void UpdateQueryActive(String tableName) throws Exception {
+
+		try {
+			System.out.println("UPDATE " + tableName
+					+ " SET isActive = 0 where CreatedOn < getDate()- 2");
+			
+			stmt.executeUpdate("UPDATE " + tableName
+					+ " SET isActive = 0 where CreatedOn < getDate()- 2");
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
 
 	public int UpdateQuery(String DBQuery) throws Exception {
 

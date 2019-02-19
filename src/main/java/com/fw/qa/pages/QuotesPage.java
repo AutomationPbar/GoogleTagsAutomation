@@ -10,7 +10,7 @@ import com.fw.qa.baseclass.TestBase;
 
 public class QuotesPage extends TestBase {
 
-	@FindBy(xpath="//*[@id='divquote']/div[9]/div/div/div[3]/div/div/div[27]/div[1]/span/div[1]/div[5]/button")
+	@FindBy(xpath="//*[@id='divquote']/div[8]/div/div/div[3]/div/div/div[22]/div[1]/span/div[1]/div[5]/button")
 	WebElement quote;
 	
 	@FindBy(xpath="//*[@id='divquote']/div[8]/div/div/div[1]/div/div/div/button[1]")

@@ -136,7 +136,6 @@ public class GoogleAnalytics {
 
 			System.out.println("Encoded Part : " + encodedPart);
 
-			//Campaign 1
 			
 			try{
 			
