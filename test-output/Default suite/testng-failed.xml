@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.qa.testcases.GAtestcase2">
+      <class name="com.qa.testcases_tw.Testcase2">
         <methods>
-          <include name="getquotestest"/>
           <include name="setup"/>
+          <include name="getquotestest"/>
         </methods>
-      </class> <!-- com.qa.testcases.GAtestcase2 -->
+      </class> <!-- com.qa.testcases_tw.Testcase2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

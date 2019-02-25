@@ -28,7 +28,7 @@ public class GetReports {
 	static int uniqueID ;
 	
 	static String expectedreportpath = "C:\\GoogleAnalyticsProject\\compare\\";
-	static String expectedreportName = "GA_Expected.xlsx";
+	static String expectedreportName = "GA_ExpectedResult.xlsx";
 	static String rawreportpath = "C:\\GoogleAnalyticsProject\\GA\\";
 	static String rawReportName = "";
 	static String FinalReportData[] = null;

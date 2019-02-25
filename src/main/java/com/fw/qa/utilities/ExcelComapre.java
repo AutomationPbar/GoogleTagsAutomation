@@ -42,7 +42,7 @@ public class ExcelComapre {
 	 String returnvalue[] = new String[4];
         try {
         	
-        	SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy");
+        	SimpleDateFormat formatter = new SimpleDateFormat("ddMMMyyyy");
 			Date datedd = new Date();
 			System.out.println(formatter.format(datedd));
 			String localDate11 = formatter.format(datedd).toString();
@@ -52,7 +52,7 @@ public class ExcelComapre {
 			reportfilename = cj+"Automation_GA_Comparison_Report"+localDate11+".xlsx";
             // get input excel files
          System.out.println("Welcome");
-            FileInputStream excellFile1 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\compare\\HealthGA_Expected.xlsx"));
+            FileInputStream excellFile1 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\compare\\"+cj+"GA_ExpectedResult.xlsx"));
             FileInputStream excellFile2 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\GA\\"+reportfile+".xlsx"));
 
             // Create Workbook instance holding reference to .xlsx file

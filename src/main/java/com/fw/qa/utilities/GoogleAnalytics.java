@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -100,13 +102,18 @@ public class GoogleAnalytics {
 		System.out.println("opening google analytics website ");
 		setProperties();
 		
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMMyyyy");
+		Date datedd = new Date();
+		System.out.println(formatter.format(datedd));
+		localDate = formatter.format(datedd).toString();
+		
 		System.out.println("opened google analytics website");
 		Thread.sleep(2000);
 		
 		visitid = id;
 		date1 = date;
 		date2 =  date;
-		localDate = date;
+		
 		journey = cj;
 
 		driver.get(baseURL);
@@ -133,6 +140,12 @@ public class GoogleAnalytics {
 
 			System.out.println("Current URL : " + currURL);
 			String encodedPart = "a4743078w116032314p121329761";
+			if(journey.equalsIgnoreCase("health")){
+				encodedPart = "a4743078w116032314p121329761";
+			}else if (journey.equalsIgnoreCase("TW")){
+				encodedPart = "a4743078w194576901p189977496";
+			}
+			
 
 			System.out.println("Encoded Part : " + encodedPart);
 
