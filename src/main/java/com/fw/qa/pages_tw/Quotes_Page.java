@@ -1,5 +1,6 @@
 package com.fw.qa.pages_tw;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -24,6 +25,14 @@ public class Quotes_Page extends TestBase{
 	@FindBy(id="txtIDV")
 	public
 	static WebElement setidv;
+	
+	@FindBy(id="prevNCB")
+	public
+	static WebElement ncb;
+	
+	@FindBy(id="NCBClaimedLastYearYes")
+	public
+	static WebElement ncbyes;
 	
 	@FindBy(xpath="//*[@id='frmIDV']/div[2]/ul/li[3]/input")
 	public
@@ -69,7 +78,7 @@ public class Quotes_Page extends TestBase{
 	public
 	static WebElement palink;
 	
-	@FindBy(xpath="//*[@id='151']/ul/li[5]/div/a/span")
+	@FindBy(xpath="//*[@id='dvQuoteList']/div[2]/div/div/ul/li[5]/div/a/span")
 	public
 	static WebElement quoteslink;
 	
@@ -77,6 +86,19 @@ public class Quotes_Page extends TestBase{
 		
 		PageFactory.initElements(driver, this);
 		
+	}
+	
+	public static void updateidvvalue(){
+		
+		String idvvalue = driver.findElement(By.xpath("//*[@id='frmIDV']/div[1]/div[1]/b")).getText();
+		
+		int value = Integer.parseInt(idvvalue);
+		 value = value +20;
+		 
+		 String newidv = Integer.toString(value);
+		 setidv.click();
+		 setidv.clear();
+		 setidv.sendKeys(newidv);
 	}
 	
 

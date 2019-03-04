@@ -1,21 +1,2 @@
-__insp_norec_sess;true;.policybazaar.com;/;Fri Feb 21 17:52:10 IST 2020;false
-__insp_nv;true;.policybazaar.com;/;Fri Feb 21 17:52:09 IST 2020;false
-_hjIncludedInSample;1;twowheeler.policybazaar.com;/;null;false
-__insp_targlpt;UG9saWN5QmF6YWFyIFR3byBXaGVlbGVyIEluc3VyYW5jZQ%3D%3D;.policybazaar.com;/;Fri Feb 21 17:52:09 IST 2020;false
-CustProfileCookie;%7B%22VisitorToken%22%3A%225c6e97da4396df582aaf8297%22%7D;.policybazaar.com;/;Sat Feb 20 17:52:06 IST 2021;false
-__insp_targlpu;aHR0cHM6Ly90d293aGVlbGVyLnBvbGljeWJhemFhci5jb20vP3V0bV9jb250ZW50PWhvbWVfdjQ%3D;.policybazaar.com;/;Fri Feb 21 17:52:09 IST 2020;false
-_gid;GA1.2.613162497.1550751728;.policybazaar.com;/;Fri Feb 22 17:52:11 IST 2019;false
-_gid;GA1.3.613162497.1550751728;.twowheeler.policybazaar.com;/;Fri Feb 22 17:52:07 IST 2019;false
-_dc_gtm_UA-4743078-1;1;.policybazaar.com;/;Thu Feb 21 17:53:11 IST 2019;false
-__insp_slim;1550751729963;.policybazaar.com;/;Fri Feb 21 17:52:09 IST 2020;false
-Cookie_VisitLog;244297960;.policybazaar.com;/;Fri Mar 08 17:52:37 IST 2019;false
-VisitProfileCookie;%7B%22visitId%22%3A244297960%2C%22UtmSource%22%3A%22%22%2C%22UtmMedium%22%3A%22%22%2C%22UtmTerm%22%3A%22%22%2C%22UtmCampaign%22%3A%22%22%2C%22visitorToken%22%3A%225c6e97da4396df582aaf8297%22%7D;.policybazaar.com;/;Thu Feb 21 18:52:06 IST 2019;false
-__insp_wid;1851925877;.policybazaar.com;/;Fri Feb 21 17:52:09 IST 2020;false
-_dc_gtm_UA-4743078-9;1;.policybazaar.com;/;Thu Feb 21 17:53:07 IST 2019;false
-_ga;GA1.2.2034329211.1550751728;.policybazaar.com;/;Sat Feb 20 17:52:11 IST 2021;false
-_ga;GA1.3.2034329211.1550751728;.twowheeler.policybazaar.com;/;Sat Feb 20 17:52:07 IST 2021;false
-_fbp;fb.1.1550751729794.65051366;.policybazaar.com;/;Wed May 22 17:52:55 IST 2019;false
-_gcl_au;1.1.2032811628.1550751727;.policybazaar.com;/;Wed May 22 17:52:06 IST 2019;false
-_gat_TwGATracker;1;.twowheeler.policybazaar.com;/;Thu Feb 21 17:53:07 IST 2019;false
-Cookie_VisitToken;5c6e97da4396df582aaf8297;.policybazaar.com;/;Sat Mar 23 17:52:06 IST 2019;false
-__insp_ss;1550751729970;.policybazaar.com;/;Fri Feb 21 17:52:09 IST 2020;false
+testcookie;true;securegw.paytm.in;/theia;null;false
+JSESSIONID;BBC5840858866896EAC8EDEF64D92B85.Policy48694400762940PG6645586;securegw.paytm.in;/theia/;null;true

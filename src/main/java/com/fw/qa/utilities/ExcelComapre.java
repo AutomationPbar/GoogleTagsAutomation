@@ -180,7 +180,10 @@ public class ExcelComapre {
 			             
 			             SetCellData1(excelpath_update, sheetname,resultdata, excelrow,status);
 							excelrow++;
-							sb.append("'").append(sheet1cell1data +"_"+sheet1cell2data).append("'");
+							
+							 String missactfinal = sheet1cell1data +"_"+sheet1cell2data;
+			                 missactfinal = Sanitize (missactfinal);
+							sb.append("'").append(missactfinal).append("'");
 							 missactual = sb.toString();
 		                 System.out.println("Row "+i+" - Not Equal");
 	            	 }
@@ -274,7 +277,9 @@ public class ExcelComapre {
 			             SetCellData1(excelpath_update, sheetname,resultdata, dexcelrow,status);
 							dexcelrow++;
 		                 System.out.println("Row "+k+" - Not Equal");
-		                 sb2.append("'").append(sheet2cell3newdata +"_"+sheet2cell4newdata).append("'");
+		                 String missexpfinal = sheet2cell3newdata +"_"+sheet2cell4newdata;
+		                 missexpfinal = Sanitize (missexpfinal);
+		                 sb2.append("'").append(missexpfinal).append("'");
 		                 System.out.println("Missing tags is expected " +sb2);
 		                 missexpected = sb2.toString();
 	            	 }
@@ -393,5 +398,15 @@ public class ExcelComapre {
 			throw (e);
 		}
 
+	}
+	
+public static String Sanitize(String inp){
+		
+		String output = "";
+		
+		output = inp.replace("'", "");
+		
+		return output;
+		
 	}
 }

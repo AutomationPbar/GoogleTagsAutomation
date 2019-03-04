@@ -20,14 +20,27 @@ public class Make_DetailsPage extends TestBase{
 	public
 	static WebElement selectmake;
 	
+	@FindBy(xpath="//*[@id='Prequote']/div/div/form/div[2]/label")
+	public
+	static WebElement manufacturer;
+	
+	@FindBy(xpath="//*[@id='searchOthers']")
+	public
+	static WebElement others;
+	
+	@FindBy(xpath="//*[@id='Prequote']/div/div/div/div[2]/div/a")
+	public
+	static WebElement makeclose;
+	
+	@FindBy(xpath="//*[@id='Prequote']/div/div/form/div[3]/label")
+	public
+	static WebElement modelselect;
+	
 	
 	@FindBy(xpath="//*[@id='dvMake']/ul/div/li[2]/span")
 	public
 	static WebElement topmake;
 	
-	@FindBy(id="searchOthers")
-	public
-	static WebElement others;
 	
 	@FindBy(xpath="//*[@id='dvModel']/ul/div/li[33]/span/b")
 	public
@@ -41,7 +54,7 @@ public class Make_DetailsPage extends TestBase{
 	public
 	static WebElement makebackbtn;
 	
-	@FindBy(xpath="//*[@id='dvVariant']/ul/div/li/span/b")
+	@FindBy(xpath="//*[@id='dvVariant']/ul/div/li[1]/span/b")
 	public
 	static WebElement topvariant;
 	

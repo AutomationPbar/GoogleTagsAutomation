@@ -94,7 +94,7 @@ public class JsonReader  {
                     	  } catch(Exception e){
                     		  
                     		  System.out.println("the category string is null");
-                    		  category = " ";
+                    		  category = "Blank Space";
                     	  }
                     	  
                     	  try{
@@ -104,7 +104,7 @@ public class JsonReader  {
                         	  } catch(Exception e){
                         		  
                         		  System.out.println("the action string is null");
-                        		  action = " ";
+                        		  action = "Blank Space";
                         	  }
                     	  
                     	  try{
@@ -114,7 +114,7 @@ public class JsonReader  {
                         	  } catch(Exception e){
                         		  
                         		  System.out.println("the label string is null");
-                        		  label = " ";
+                        		  label = "Blank Space";
                         	  }
                     	  	
                     		resultdata[0] = category;

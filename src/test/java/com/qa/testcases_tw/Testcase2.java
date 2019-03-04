@@ -15,9 +15,12 @@ import org.testng.annotations.Test;
 import com.fw.qa.baseclass.TestBase;
 import com.fw.qa.pages_tw.HomePage;
 import com.fw.qa.pages_tw.Make_DetailsPage;
+import com.fw.qa.pages_tw.Proposal_DetailsPage;
+import com.fw.qa.pages_tw.Proposal_DetailsPage3;
 import com.fw.qa.pages_tw.Quotes_Page;
 import com.fw.qa.pages_tw.RTO_DetailsPage;
 import com.fw.qa.pages_tw.Reg_DetailsPage;
+import com.fw.qa.pages_tw.Summary_Page;
 import com.fw.qa.pages_tw.TW_Home;
 import com.fw.qa.utilities.DBManager;
 import com.fw.qa.utilities.GetReports;
@@ -34,6 +37,9 @@ public class Testcase2 extends TestBase {
 	Make_DetailsPage makedetailspage;
 	Reg_DetailsPage regdetailspage;
 	Quotes_Page quotespage;
+	Proposal_DetailsPage proposaldetailspage;
+	Proposal_DetailsPage3 proposaldetailspage3;
+	Summary_Page summarypage;
 	
 	ReadCookies rc;
 	
@@ -77,6 +83,10 @@ public class Testcase2 extends TestBase {
 		makedetailspage = new Make_DetailsPage();
 		regdetailspage = new Reg_DetailsPage();
 		quotespage = new Quotes_Page();
+		
+		proposaldetailspage = new Proposal_DetailsPage();
+		proposaldetailspage3 = new Proposal_DetailsPage3();
+		summarypage = new Summary_Page();
 		date = new Date();
 		rc = new ReadCookies();
 		
@@ -116,27 +126,24 @@ public class Testcase2 extends TestBase {
 				e.printStackTrace();
 			}
 			
+			
+				
 			try {
+
 				Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id='RegistrationForm']/div[2]/div[2]/a")).click();
 				Thread.sleep(2000);
 				tw_home.newbike.click();
-				file3 =rc.readcookie(file3);
-				System.out.println("cookie one path" + file3.getAbsolutePath());
-				Gtoken3 = rc.returnvisitid(file3);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			try {
 				Thread.sleep(2000);
 				driver.navigate().back();
 				Thread.sleep(2000);
 				TW_Home.dontknowreg.click();
-				file4 =rc.readcookie(file4);
-				System.out.println("cookie one path" + file4.getAbsolutePath());
-				Gtoken4 = rc.returnvisitid(file4);
+				Thread.sleep(2000);
+				RTO_DetailsPage.rtoclose.click();
+				Thread.sleep(2000);
+				RTO_DetailsPage.RTOsearch.click();
+				Thread.sleep(2000);
+				
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -164,24 +171,57 @@ public class Testcase2 extends TestBase {
 				Thread.sleep(2000);
 				rtodetailspage.rtonumber.click();
 				Thread.sleep(2000);
-				makedetailspage.topmake.click();
+				Make_DetailsPage.makeclose.click();
 				Thread.sleep(2000);
-				makedetailspage.topmodel.click();
+				Make_DetailsPage.manufacturer.click();
 				Thread.sleep(2000);
-				makedetailspage.topvariant.click();
+				System.out.println("selecting others make");
+				Make_DetailsPage.others.click();
 				Thread.sleep(2000);
-				regdetailspage.yearvalue.click();
+				Make_DetailsPage.make.sendKeys("Hond");
+				Make_DetailsPage.selectmake.click();
+				Thread.sleep(2000);
+				Make_DetailsPage.modelbackbtn.click();
+				Thread.sleep(2000);
+				Make_DetailsPage.topmake.click();
+				Thread.sleep(2000);
+				Make_DetailsPage.makeclose.click();
+				Thread.sleep(2000);
+				
+				System.out.println("selecting model from leftpane");
+				Make_DetailsPage.modelselect.click();
+				Thread.sleep(2000);
+				System.out.println("selecting others model ");
+				Make_DetailsPage.others.click();
+				Thread.sleep(2000);
+				Make_DetailsPage.model.sendKeys("Pul");
+				Thread.sleep(2000);
+				Make_DetailsPage.selectmake.click();
+				Thread.sleep(2000);
+				Make_DetailsPage.variantbackbtn.click();
+				Thread.sleep(2000);
+				System.out.println("selecting model from top models");
+				Make_DetailsPage.topmodel.click();
+				Thread.sleep(2000);
+				Make_DetailsPage.topvariant.click();
+				Thread.sleep(2000);
+				Reg_DetailsPage.brandnew.click();
+				Thread.sleep(2000);
+				
+				driver.navigate().back();
+				Thread.sleep(4000);
+				Reg_DetailsPage.yearvalue.click();
 				Thread.sleep(2000);
 				regdetailspage.previousinsurer.click();
 				Thread.sleep(3000);
 				
 				//driver.switchTo().alert();
-				System.out.println("clicking alert");
+				
 				
 				regdetailspage.policyexpiry.click();
 				regdetailspage.expirydate.click();
 				regdetailspage.covertype.click();
-				System.out.println("clicked alert");
+				
 				Thread.sleep(4000);
 				
 				Quotes_Page.twedit.click();
@@ -190,12 +230,23 @@ public class Testcase2 extends TestBase {
 				Quotes_Page.backVD.click();
 				Thread.sleep(2500);
 				driver.navigate().back();
+				
+				
+				try{
+				Quotes_Page.ncb.click();
+				Thread.sleep(2000);
+				Quotes_Page.ncbyes.click();
+				Thread.sleep(2000);
+				}catch(Exception e){
+					driver.navigate().refresh();
+				}
+				
+				Thread.sleep(4000);
 				Quotes_Page.IDVedit.click();
-				Quotes_Page.lowestidvbtn.click();
-				Quotes_Page.setidv.clear();
-				Quotes_Page.setidv.sendKeys("54678");
+				//Quotes_Page.updateidvvalue();
 				//Quotes_Page.updateidv.click();
 				//Quotes_Page.IDVedit.click();
+				//Quotes_Page.lowestidvbtn.click();
 				Quotes_Page.cancelidvbtn.click();
 				
 				Quotes_Page.share.click();
@@ -203,19 +254,81 @@ public class Testcase2 extends TestBase {
 				Quotes_Page.sharesms.click();
 				Quotes_Page.sharelink.click();
 				Quotes_Page.share.click();
-				
-				driver.switchTo().frame("/html/head/style/text()");
 				Thread.sleep(3000);
-				Quotes_Page.thirdparty.click();
+				driver.findElement(By.xpath("//*[@id='Quotes']/div[1]")).click();
 				Thread.sleep(3000);
+				//Quotes_Page.thirdparty.click();
+				//Thread.sleep(3000);
 				Quotes_Page.zerodep.click();
 				Thread.sleep(3000);
 				Quotes_Page.comprehensive.click();
 				Thread.sleep(3000);
 				Quotes_Page.palink.click();
+				Quotes_Page.palink.click();
+				Thread.sleep(3000);
+				System.out.println("clicking quotes");
 				Quotes_Page.quoteslink.click();
+				Thread.sleep(5000);
 				
+				Proposal_DetailsPage.backbtn1.click();
+				Thread.sleep(7000);
 				
+				Quotes_Page.quoteslink.click();
+				Proposal_DetailsPage.previousbtn1.click();
+				Thread.sleep(7000);
+				Quotes_Page.quoteslink.click();
+				Thread.sleep(5000);
+				Proposal_DetailsPage.ownername.sendKeys("test");
+				Proposal_DetailsPage.mobileno.sendKeys("9777777777");
+				Proposal_DetailsPage.email.sendKeys("test@policybazaar.com");
+				Proposal_DetailsPage.address.sendKeys("abcdefgh");
+				Proposal_DetailsPage.pincode.sendKeys("122003");
+				Thread.sleep(4500);
+				Proposal_DetailsPage.premiumbreakup.click();
+				Thread.sleep(2500);
+				Proposal_DetailsPage.popupclose.click();
+				Thread.sleep(2500);
+				Proposal_DetailsPage.continuestep2.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.backbtn1.click();
+				Thread.sleep(3500);
+				Quotes_Page.quoteslink.click();
+				Thread.sleep(7000);
+				Proposal_DetailsPage.continuestep2.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.previousbtn1.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.continuestep2.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.selectnomineedetails();
+				Thread.sleep(5000);
+				Proposal_DetailsPage.continuestep2.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.backbtn1.click();
+				Thread.sleep(3500);
+				Quotes_Page.quoteslink.click();
+				Thread.sleep(7000);
+				Thread.sleep(3500);
+				Proposal_DetailsPage.continuestep2.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.continuestep2.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.previousbtn1.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage.continuestep2.click();
+				Thread.sleep(3500);
+				Proposal_DetailsPage3.filldetails();
+				Thread.sleep(5000);
+				//Proposal_DetailsPage3.saveproceed.click();
+				
+				Summary_Page.summaryedit();
+				file4 =rc.readcookie(file4);
+				System.out.println("cookie one path" + file4.getAbsolutePath());
+				Gtoken4 = rc.returnvisitid(file4);
+				
+				Thread.sleep(5000);
+				Summary_Page.payonline.click();
+				Thread.sleep(5000);
 				file5 =rc.readcookie(file5);
 				
 				System.out.println("cookie one path" + file5.getAbsolutePath());
@@ -227,7 +340,7 @@ public class Testcase2 extends TestBase {
 			
 			
 	
-		//GetReports.insertcookiedata(Gtoken4, "TW",strDate, false,true);
+		GetReports.insertcookiedata(Gtoken4, "TW",strDate, false,true);
 	}
 
 	
