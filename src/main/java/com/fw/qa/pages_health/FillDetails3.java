@@ -11,24 +11,24 @@ import com.fw.qa.baseclass.TestBase;
 public class FillDetails3 extends TestBase {
 	
 	
-	@FindBy(name="selectSelf")
+	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[4]/div[1]/article/div[2]/select")
 	WebElement selfage;
-	@FindBy(name="selectSpouse")
+	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[4]/div[2]/article/div[2]/select")
 	WebElement spouseage;
-	@FindBy(name="select8")
+	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[4]/div[3]/article/div[2]/select")
 	WebElement sonage;
 	
-	@FindBy(name="select9")
+	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[4]/div[4]/article/div[2]/select")
 	WebElement daughterage;
 	
 
-	@FindBy(name="select4")
+	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[4]/div[5]/article/div[2]/select")
 	WebElement fatherage;
 	
-	@FindBy(name="select5")
+	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[4]/div[6]/article/div[2]/select")
 	WebElement motherage;
 	
-	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[7]/div[2]/button/span")
+	@FindBy(xpath="//*[@id='idAbout']/section/div/div[1]/div[2]/form/div[1]/div/div[6]/div[2]/button/span")
 	WebElement continuebtn;
 	
 	
@@ -40,7 +40,7 @@ public FillDetails3(){
 	
 	public void filldetails(String sa,String spa,String soage,String dauage,String Fage,String Mage) throws Exception{
 		
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		
 		Select selfselect = new Select(selfage);
 		selfselect.selectByValue(sa);

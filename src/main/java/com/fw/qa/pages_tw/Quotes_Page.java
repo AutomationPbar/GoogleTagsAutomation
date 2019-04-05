@@ -47,6 +47,7 @@ public class Quotes_Page extends TestBase{
 	static WebElement lowestidvbtn;
 	
 	@FindBy(xpath="//*[@id='app']/div/div[1]/div[2]/div/div[2]/div/div[1]/a")
+	
 	public
 	static WebElement share;
 	

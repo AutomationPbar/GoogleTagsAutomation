@@ -152,7 +152,7 @@ public class GAtestcase3 extends TestBase {
 			e.printStackTrace();
 		}
 		
-		driver.close();
+		//driver.close();
 		
 		try {
 			System.out.println("setting is active 0 for all previous records");

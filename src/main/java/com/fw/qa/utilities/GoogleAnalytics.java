@@ -36,7 +36,7 @@ public class GoogleAnalytics {
 	static String baseURL = "https://analytics.google.com/analytics/web/";
 
 	private static String GUser = "avani@policybazaar.com";
-	private static String GPass = "PolicyB@1234";
+	private static String GPass = "Policyb#1234";
 
 	static String date1 = "";
 	static String date2 = "";

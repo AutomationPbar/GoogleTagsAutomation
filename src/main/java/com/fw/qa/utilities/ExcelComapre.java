@@ -46,10 +46,10 @@ public class ExcelComapre {
 			Date datedd = new Date();
 			System.out.println(formatter.format(datedd));
 			String localDate11 = formatter.format(datedd).toString();
-			excelpath_update = "C:\\GoogleAnalyticsProject\\GA\\"+cj+"Automation_GA_Comparison_Report"+localDate11+".xlsx";
+			excelpath_update = "C:\\GoogleAnalyticsProject\\GA\\"+cj+"GA_Automation_Comparison_Report"+localDate11+".xlsx";
 			SetExcelFile(excelpath_update, sheetname);
 			
-			reportfilename = cj+"Automation_GA_Comparison_Report"+localDate11+".xlsx";
+			reportfilename = cj+"GA_Automation_Comparison_Report"+localDate11+".xlsx";
             // get input excel files
          System.out.println("Welcome");
             FileInputStream excellFile1 = new FileInputStream(new File("C:\\GoogleAnalyticsProject\\compare\\"+cj+"GA_ExpectedResult.xlsx"));
